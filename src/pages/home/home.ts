@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { BatteryStatus } from '@ionic-native/battery-status';
+
 
 @Component({
   selector: 'page-home',
@@ -7,7 +9,9 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,
+    private batteryStatus: BatteryStatus
+  ) {
 
   }
 
