@@ -16,13 +16,34 @@ import { Device } from '@ionic-native/device';
 })
 export class DeviceInfoPage {
 
+  uuid : string = "";
+  v_cordova : string = "";
+  modelo : string = "";
+  plataforma : string = "";
+  vso : string = "";
+  fabricante : string = "";
+  processador : string = "";
+
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     private device: Device) {
+      this.uuid = device.uuid.toString();
+      this.v_cordova = device.cordova.toString();
+      this.modelo = device.model.toString();
+      this.plataforma = device.platform.toString();
+      this.vso = device.version.toString();
+      this.fabricante = device.manufacturer.toString();
+      if(device.isVirtual== true){
+        this.processador = "Emulador"
+      }else{
+        this.processador = "Serial"
+      }
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DeviceInfoPage');
   }
+
+
 
 }
