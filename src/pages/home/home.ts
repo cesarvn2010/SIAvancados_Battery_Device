@@ -19,9 +19,10 @@ export class HomePage {
   private PATH = 'BatteryStatus/';
 
   registro: Registro;
-  s : number = 0 ;
+  l : number = 0 ;
   dhl : string = '';
   p : string = '';
+  colorS : string = 'black';
   
   constructor(public navCtrl: NavController,
     private batteryStatus: BatteryStatus,
@@ -36,7 +37,17 @@ export class HomePage {
    
     this.batteryStatus.onChange().subscribe(
       (status) => {
-        this.s = status.level;
+        this.l = status.level;
+        if(this.l>=30 && this.l <=100){
+          this.colorS = 'green';
+        }
+        if(this.l>=15 && this.l <=29){
+          this.colorS = 'yellow';
+        }
+        if(this.l>=0 && this.l <=14){
+          this.colorS = 'red';
+        }
+       
         this.dhl = new Date().toISOString();
         if(status.isPlugged == true){
           this.p = "Plugado";
@@ -51,7 +62,7 @@ export class HomePage {
    return this.registro = {
       dataHoraLeitura: this.dhl,
       plug: this.p,
-      situacao: this.s
+      situacao: this.l
     }
   }
 
@@ -64,12 +75,5 @@ export class HomePage {
     })
   }
 
-  /*
-  fireAdd()
-    {
-      const itemRef = this.db.object('BatteryStatus');
-      itemRef.set(this.registro);
-    }
-*/
 }
 

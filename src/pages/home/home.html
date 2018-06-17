@@ -10,8 +10,8 @@
 <ion-content padding>
   <ion-grid>
     <ion-row>
-        <p>
-            Status da Bateria: {{s}}
+        <p [style.color]="colorS">
+            Level da bateria: {{l}} 
         </p>
     </ion-row>
     <ion-row>
@@ -20,10 +20,10 @@
       </p>
     </ion-row>
     <ion-row text-center>
-        <img *ngIf="s == '100'" src="assets/imgs/full.png" style="width: 100px; height: 200px;"/>
-        <img *ngIf="s < '100' && s >= '30'" src="assets/imgs/high.png" style="width: 100px; height: 200px;"/>
-        <img *ngIf="s <  '30' && s >= '15' " src="assets/imgs/medium.png" style="width: 100px; height: 200px;"/>
-        <img *ngIf="s < '15'" src="assets/imgs/low.png" style="width: 100px; height: 200px;"/>
+        <img *ngIf="l == '100'" src="assets/imgs/full.png" style="width: 100px; height: 200px;"/>
+        <img *ngIf="l < '100' && l >= '30'" src="assets/imgs/high.png" style="width: 100px; height: 200px;"/>
+        <img *ngIf="l <  '30' && l >= '15' " src="assets/imgs/medium.png" style="width: 100px; height: 200px;"/>
+        <img *ngIf="l < '15'" src="assets/imgs/low.png" style="width: 100px; height: 200px;"/>
     </ion-row>
     <ion-row>
       <p>
