@@ -16,11 +16,28 @@
 <ion-content padding>
   <ion-list>
         <ion-item-sliding *ngFor="let registro of registros | async">
+          
           <ion-item>
+           
             <h3>Data Hora da Leitura: {{ registro.dataHoraLeitura }}</h3><br>
-            <p>Plug: {{ registro.plug }}</p><br>
+            <p>Conexão: {{ registro.plug }}</p><br>
             <p>Situação: {{ registro.situacao }}</p><br>
           </ion-item>
+        
+        <!--
+          <ion-item>
+            <ion-label>Data do registro:</ion-label>
+             <ion-datetime displayFormat="DD/MM/YYYY, h:mm" [(ngModel)]="registro.dataHoraLeitura"></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label>Conexão:</ion-label>
+             {{ registro.plug }}
+          </ion-item>
+          <ion-item>
+              <ion-label>Level:</ion-label>
+               {{ registro.situacao }}
+          </ion-item>
+        -->
           <ion-item-options side="left">
             <button ion-button color="danger" (click)="removeRegistro(registro.key)">
               <ion-icon name="trash"></ion-icon>

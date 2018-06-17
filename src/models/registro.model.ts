@@ -1,3 +1,5 @@
+import { DateTime } from "ionic-angular/umd";
+
 export interface Registro {
 
     key?: string;

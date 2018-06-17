@@ -23,6 +23,8 @@ export class HomePage {
   dhl : string = '';
   p : string = '';
   colorS : string = 'black';
+
+  
   
   constructor(public navCtrl: NavController,
     private batteryStatus: BatteryStatus,
@@ -48,7 +50,14 @@ export class HomePage {
           this.colorS = 'red';
         }
        
-        this.dhl = new Date().toISOString();
+        let dataAtual : Date =  new Date();
+
+        this.dhl = dataAtual.getDate().toString() +'/'
+        + dataAtual.getMonth().toString()+'/'
+        +dataAtual.getFullYear().toString()+
+        ' '+dataAtual.getHours().toString()+':'
+        +dataAtual.getMinutes().toString() ;
+
         if(status.isPlugged == true){
           this.p = "Plugado";
         }
