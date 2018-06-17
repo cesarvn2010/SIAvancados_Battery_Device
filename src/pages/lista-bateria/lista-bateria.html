@@ -6,13 +6,27 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>ListaBateria</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Registros</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-list>
+        <ion-item-sliding *ngFor="let registro of registros | async">
+          <ion-item>
+            <h2>Data Hora da Leitura: {{ registro.dataHoraLeitura }}</h2><br>
+            <p>Plug: {{ registro.plug }}</p><br>
+            <p>Situação: {{ registro.situacao }}</p><br>
+          </ion-item>
+          <ion-item-options side="left">
+            <button ion-button color="danger" (click)="removeRegistro(registro.key)">
+              <ion-icon name="trash"></ion-icon>
+            </button>
+          </ion-item-options>
+        
+        </ion-item-sliding>
+  </ion-list>
 </ion-content>

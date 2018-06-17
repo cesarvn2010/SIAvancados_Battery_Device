@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -11,23 +11,23 @@
   <ion-grid>
     <ion-row>
         <p>
-            Status da Bateria: {{Level}}
+            Status da Bateria: {{s}}
         </p>
     </ion-row>
     <ion-row>
       <p>
-          {{Plug}}
+          {{p}}
       </p>
     </ion-row>
     <ion-row text-center>
-        <img *ngIf="Level == '100'" src="assets/imgs/full.png" style="width: 100px; height: 200px;"/>
-        <img *ngIf="Level < '100' && Level >= '30'" src="assets/imgs/high.png" style="width: 100px; height: 200px;"/>
-        <img *ngIf="Level <  '30' && Level >= '15' " src="assets/imgs/medium.png" style="width: 100px; height: 200px;"/>
-        <img *ngIf="Level < '15'" src="assets/imgs/low.png" style="width: 100px; height: 200px;"/>
+        <img *ngIf="s == '100'" src="assets/imgs/full.png" style="width: 100px; height: 200px;"/>
+        <img *ngIf="s < '100' && s >= '30'" src="assets/imgs/high.png" style="width: 100px; height: 200px;"/>
+        <img *ngIf="s <  '30' && s >= '15' " src="assets/imgs/medium.png" style="width: 100px; height: 200px;"/>
+        <img *ngIf="s < '15'" src="assets/imgs/low.png" style="width: 100px; height: 200px;"/>
     </ion-row>
     <ion-row>
       <p>
-        <button ion-button color="primary" (click)="fireAdd()">Registrar Status da Bateria</button>
+        <button ion-button color="primary" (click)="save()">Registrar Status da Bateria</button>
        </p>
     </ion-row>
   </ion-grid>

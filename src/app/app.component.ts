@@ -17,7 +17,8 @@ export class MyApp {
 
   constructor(public platform: Platform, 
     statusBar: StatusBar, 
-    splashScreen: SplashScreen) {
+    splashScreen: SplashScreen,
+  ) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -27,7 +28,7 @@ export class MyApp {
 
     this.pages = [
       {title: 'Home', component: HomePage},
-      {title: 'Lista Battery Status', component: 'ListaBatteryPage'},
+      {title: 'Lista Battery Status', component: 'ListaBateriaPage'},
       {title: 'Device Infos', component: 'DeviceInfoPage'},
       {title: 'Fechar', component: 'Fechar'}
     ]
