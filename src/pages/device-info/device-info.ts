@@ -47,3 +47,29 @@ export class DeviceInfoPage {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//essa app foi desenvolvida por César Murilo
